@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>IP Geolocation</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Poppins', sans-serif;
+      background: url('https://images.unsplash.com/photo-1602526212482-c1c4b8d4288b?auto=format&fit=crop&w=1950&q=80') no-repeat center center fixed;
+      background-size: cover;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 16px;
+      padding: 30px 40px;
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      color: #495057;
+      max-width: 350px;
+      width: 90%;
+      text-align: center;
+    }
+
+    .card h1 {
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+
+    .card p {
+      margin: 5px 0;
+      font-size: 16px;
+    }
+
+    .card .location {
+      margin-top: 15px;
+      font-weight: 600;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="card">
+    <h1>IP Bilgileri</h1>
+    <p><strong>IP:</strong> <%= ipData.ip %></p>
+    <p><strong>Ülke:</strong> <%= ipData.country_name || 'Bilinmiyor' %></p>
+    <p><strong>Şehir:</strong> <%= ipData.city || 'Bilinmiyor' %></p>
+    <p><strong>Bölge:</strong> <%= ipData.region_name || 'Bilinmiyor' %></p>
+    <div class="location">
+      <p><strong>Latitude:</strong> <%= ipData.latitude %></p>
+      <p><strong>Longitude:</strong> <%= ipData.longitude %></p>
+    </div>
+  </div>
+
+</body>
+</html>
